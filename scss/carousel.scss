@@ -1,0 +1,76 @@
+@import "./variables";
+
+.carousel {
+  position: relative;
+
+  img {
+    animation: carousel-animation 5s linear infinite;
+    height: 60vh;
+    object-fit: cover;
+    width: 100%;
+
+    @include desktop() {
+      max-height: 500px;
+    }
+  }
+
+  &__description {
+    align-items: center;
+    animation: carousel-animation 5s linear infinite;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: center;
+    left: 50%;
+    opacity: 0.9;
+    outline-offset: 15px;
+    outline: 3px $mainColor solid;
+    padding: 0 7%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 80%;
+
+    @include desktop() {
+      height: 60%;
+      width: 50%;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+
+      @include desktop() {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@keyframes carousel-animation {
+  0% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0;
+  }
+
+  13% {
+    opacity: 1;
+  }
+
+  87% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

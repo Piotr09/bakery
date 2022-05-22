@@ -1,0 +1,43 @@
+@import "./variables";
+
+.our-places {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0 auto;
+  max-width: $maxWidth;
+
+  @include mobilePadding();
+
+  @include desktop() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__description {
+    align-items: center;
+    display: flex;
+    font-size: 22px;
+    font-weight: 300;
+    justify-content: center;
+    min-height: 250px;
+    outline-offset: -20px;
+    outline: 3px $mainColor solid;
+    text-align: center;
+
+    &:nth-of-type(2) {
+      order: 1;
+
+      @include desktop() {
+        order: unset;
+      }
+    }
+
+    @include desktop() {
+      font-size: 28px;
+    }
+
+    a {
+      color: $mainColor;
+      font-weight: 400;
+    }
+  }
+}

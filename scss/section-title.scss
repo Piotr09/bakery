@@ -1,0 +1,24 @@
+@import "./variables";
+
+.section-title {
+  margin: 40px auto;
+  max-width: $maxWidth;
+
+  @include mobilePadding();
+
+  @include desktop() {
+    margin: 60px auto;
+  }
+
+  h2::before {
+    color: $mainColor;
+    content: "|";
+    margin-right: 10px;
+  }
+
+  span {
+    display: block;
+    font-size: 16px;
+    padding-top: 15px;
+  }
+}

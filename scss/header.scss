@@ -1,0 +1,108 @@
+@import "./variables";
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: $maxWidth;
+
+  &__logo {
+    width: 140px;
+  }
+
+  &__burger {
+    background: none;
+    border: none;
+    color: $mainText;
+    cursor: pointer;
+    display: block;
+    font-size: 36px;
+    height: 52px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    transition: transform 0.3s;
+    width: 52px;
+    z-index: 10;
+
+    .fas {
+      font-size: 42px;
+      height: 52px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 52px;
+    }
+
+    @include desktop() {
+      display: none;
+    }
+  }
+
+  &__nav {
+    background-color: #ffffff;
+    display: flex;
+    height: 90%;
+    opacity: 0.98;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    @include desktop() {
+      height: unset;
+      left: unset;
+      position: relative;
+      width: unset;
+    }
+
+    ul {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      list-style-type: none;
+      width: 100%;
+
+      @include desktop() {
+        flex-direction: row;
+      }
+
+      li {
+        margin: 0 40px 20px 0;
+
+        @include desktop() {
+          margin: 0 25px 0 0;
+        }
+      }
+
+      .fas {
+        align-items: center;
+        background-color: white;
+        border-radius: 50%;
+        color: $mainColor;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin-right: 5px;
+        padding: 10px;
+        width: 30px;
+      }
+
+      a {
+        align-items: center;
+        color: $mainText;
+        display: flex;
+        font-size: 16px;
+
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

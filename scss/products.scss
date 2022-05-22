@@ -1,0 +1,48 @@
+@import "./variables";
+
+.products {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  max-width: $maxWidth;
+
+  @include mobilePadding();
+
+  @include desktop() {
+    grid-gap: 30px;
+  }
+
+  &__card {
+    outline-offset: -15px;
+    outline: 2px solid #fff;
+    position: relative;
+
+    img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+
+      @include desktop() {
+        height: 250px;
+      }
+    }
+
+    span {
+      background-color: white;
+      display: block;
+      font-size: 16px;
+      left: 50%;
+      padding: 10px 20px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  @include desktop() {
+    column-gap: 60px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

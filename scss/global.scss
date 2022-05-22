@@ -1,0 +1,60 @@
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $mainText;
+  font-family: "Open Sans", arial;
+
+  a {
+    text-decoration: unset;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+
+    @include desktop() {
+      font-size: 34px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.show-mobile-nav {
+  background-color: white;
+  left: 0;
+
+  @include desktop() {
+    background-color: unset;
+  }
+}
+
+.hide-mobile-nav {
+  left: -100vw;
+
+  @include desktop() {
+    left: 0;
+  }
+}
